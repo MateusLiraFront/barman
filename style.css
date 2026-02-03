@@ -160,20 +160,6 @@ header{
     color: #666;
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
-    }
-
-    .contact-links a {
-        justify-content: center;
-    }
-}
-
-
 /* Container geral (se tiver um pai, ex: .drinks) */
 .drinks {
     max-width: 1100px;
@@ -241,19 +227,6 @@ h3 {
 /* Alternar automaticamente pares e ímpares */
 .drink:nth-child(even) {
     flex-direction: row-reverse;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .drink,
-    .drink:nth-child(even) {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .img-drink img {
-        max-width: 100%;
-    }
 }
 
 .carousel {
@@ -412,8 +385,48 @@ h4{
     transform: translateX(6px);
 }
 
-/* Responsivo */
-@media (max-width: 900px) {
+.team{
+    text-align: center;
+}
+
+
+@media (min-width: 900px){
+    .carousel-mobile{
+        display: none;
+    }
+}
+
+/* =========================
+   RESPONSIVO ATÉ 768px
+========================= */
+@media (max-width: 768px) {
+
+    /* ===== HEADER ===== */
+    .logo {
+        height: 35px;
+        margin-left: 20px;
+    }
+
+    .link-header {
+        margin-right: 20px;
+        gap: 30px;
+    }
+
+    .link-header a {
+        font-size: 10px;
+    }
+
+    .logo-center {
+        width: 40%;
+        margin-top: 50px;
+    }
+
+    /* ===== CAROUSEL ===== */
+    .carousel {
+        display: none;
+    }
+
+    /* ===== CONTATO ===== */
     .contact-card {
         flex-direction: column;
         text-align: center;
@@ -428,8 +441,94 @@ h4{
         padding-left: 0;
         padding-top: 14px;
     }
+
+    /* ===== FOOTER ===== */
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .contact-links a {
+        justify-content: center;
+    }
+
+    /* ===== DRINKS – LAYOUT ===== */
+    .display-drinks {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .drink,
+    .drink:nth-child(even) {
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    /* ===== DRINKS – ANIMAÇÃO (MOBILE) ===== */
+    .drink .info,
+    .drink .img-drink,
+    .drink:nth-child(even) .info,
+    .drink:nth-child(even) .img-drink {
+        opacity: 0;
+        transform: translateY(30px) scale(1);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .drink.show .info,
+    .drink.show .img-drink {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    /* ===== TEXTO ===== */
+    .info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .info p {
+        font-size: 15px;
+        max-width: 340px;
+        text-align: center;
+        text-justify: unset;
+        hyphens: unset;
+    }
+
+    .info h4 {
+        font-size: 12px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #b0b0b0;
+        margin-bottom: 6px;
+    }
+
+    .info h3 {
+        font-size: 22px;
+    }
+
+    /* ===== IMAGEM ===== */
+    .img-drink {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: none;
+    }
+
+    .img-drink img {
+        width: 280px;
+        max-width: 70vw;
+        border-radius: 12px;
+        object-fit: cover;
+    }
 }
 
+
+
+/*                      Animações                        */
 
 /* Animação da logo Central */
 /* Animação da logo Central */
@@ -479,35 +578,32 @@ h4{
     transform: translateY(0);
 }
 
-/* Texto */
-.drink .info {
+/* .drink .info {
     opacity: 0;
     transform: translateX(-40px);
     transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
-/* Imagem */
 .drink .img-drink {
     opacity: 0;
     transform: translateX(40px) scale(0.95);
     transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
 }
 
-/* Ativação */
 .drink.show .info,
 .drink.show .img-drink {
     opacity: 1;
     transform: translateX(0) scale(1);
 }
 
-/* Alternar direção automaticamente */
+
 .drink:nth-child(even) .info {
     transform: translateX(40px);
 }
 
 .drink:nth-child(even) .img-drink {
     transform: translateX(-40px) scale(0.95);
-}
+} */
 
 
 /* animação Contato */
