@@ -1,0 +1,549 @@
+html, body {
+    height: 100%;
+}
+
+body{
+    background-color: #090907;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Google Sans'
+}
+
+header{
+    height: 60px;
+    background-color: #111111;
+    display:flex;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    height: 40px;
+    margin-left: 80px;
+}
+
+.link-header{
+    margin-right: 80px;
+    display: flex;
+    gap: 40px;
+    text-decoration: none;
+}
+
+.link-header a {
+    text-decoration: none;   
+    color: #fff;             
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.banner {
+    width: 100%;
+    margin-top: 50px;
+    display: block;
+    z-index: -1;
+
+    opacity: 0;
+    transform: scale(1.08);
+    animation: bannerReveal 1.6s ease-out forwards;
+}
+
+/* Animação */
+@keyframes bannerReveal {
+    from {
+        opacity: 0;
+        transform: scale(1.08);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.logo-center {
+    width: 30%;
+    margin-top: 80px;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+
+.footer {
+    background: #0f0f0f;
+    color: #ccc;
+    padding: 60px 8% 30px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+}
+
+/* Títulos */
+.footer-item h4 {
+    color: #f2f2f2;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+/* Lista */
+.footer-item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-item ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* Contato */
+.logo-svg{
+    height: 10px;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.contact-links a:hover {
+    color: #fff;
+}
+
+.contact-links img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Texto atendimento */
+.footer-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #aaa;
+}
+
+/* Linha inferior */
+.footer-bottom {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .contact-links a {
+        justify-content: center;
+    }
+}
+
+
+/* Container geral (se tiver um pai, ex: .drinks) */
+.drinks {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Cada drink */
+.drink {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 90px;
+}
+
+/* Texto */
+.info {
+    flex: 1;
+}
+
+.info h4 {
+    color: #b0b0b0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+h3 {
+    color: #e36e1b;
+    font-size: 2rem;
+    margin-bottom: 16px;
+    font-family: 'Open Sans';
+}
+
+.info p {
+    max-width: 350px;
+    line-height: 1.7;
+    color: #ccc;
+
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* Imagem */
+.img-drink {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.img-drink img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Alternar automaticamente pares e ímpares */
+.drink:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .drink,
+    .drink:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .img-drink img {
+        max-width: 100%;
+    }
+}
+
+.carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #0c0c0c;
+    padding: 60px 0;
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+/* Base */
+.card {
+    width: 180px;
+    height: 280px;
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+
+    opacity: 0.25;
+    transform: scale(0.75);
+    transition: 
+        transform 0.5s ease,
+        opacity 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+/* Centro */
+.card.active {
+    width: 260px;
+    height: 380px;
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 20px 50px rgba(0,0,0,.8);
+}
+
+/* Próximos */
+.card.left,
+.card.right {
+    opacity: 0.6;
+    transform: scale(0.85);
+    box-shadow: 0 12px 30px rgba(0,0,0,.6);
+}
+
+/* Mais distantes */
+.card.far {
+    opacity: 0.4;
+    transform: scale(0.78);
+}
+
+/* Imagem */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.team{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h4{
+    color: #b0b0b0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+
+.contact-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+    background: #0c0c0c;
+}
+
+.contact-card {
+    max-width: 1100px;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    gap: 80px;
+
+    background: linear-gradient(145deg, #111, #0b0b0b);
+    border-radius: 24px;
+    padding: 60px 70px;
+
+    box-shadow: 0 30px 80px rgba(0,0,0,.7);
+}
+
+
+/* Logo */
+.contact-logo img {
+    width: 220px;
+    filter: drop-shadow(0 10px 30px rgba(255,255,255,0.1));
+}
+
+/* Conteúdo */
+.contact-info h2 {
+    font-size: 36px;
+    color: #f5f5f5;
+    margin-bottom: 18px;
+    letter-spacing: 2px;
+}
+
+.contact-info p {
+    max-width: 460px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #bdbdbd;
+    margin-bottom: 30px;
+}
+
+/* WhatsApp CTA */
+.contact-whatsapp {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+
+    text-decoration: none;
+    color: #eaeaea;
+
+    padding-left: 18px;
+    border-left: 3px solid #25d366;
+
+    transition: all 0.3s ease;
+}
+
+.contact-whatsapp span {
+    font-size: 13px;
+    color: #9a9a9a;
+    letter-spacing: 1px;
+}
+
+.contact-whatsapp strong {
+    font-size: 20px;
+    letter-spacing: 1.5px;
+}
+
+.contact-whatsapp:hover {
+    color: #fff;
+    transform: translateX(6px);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .contact-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+        padding: 50px 30px;
+    }
+
+    .contact-whatsapp {
+        align-items: center;
+        border-left: none;
+        border-top: 3px solid #25d366;
+        padding-left: 0;
+        padding-top: 14px;
+    }
+}
+
+
+/* Animação da logo Central */
+/* Animação da logo Central */
+.logo-center.animate {
+    animation:
+        logoEnter 1.2s ease-out forwards,
+        logoBreath 6s ease-in-out 1.2s infinite;
+}
+
+
+/* Entrada inicial */
+@keyframes logoEnter {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes logoBreath {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.04);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+/* Animação drink */
+/* Estado inicial */
+.drink {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Quando entra na tela */
+.drink.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Texto */
+.drink .info {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
+}
+
+/* Imagem */
+.drink .img-drink {
+    opacity: 0;
+    transform: translateX(40px) scale(0.95);
+    transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
+}
+
+/* Ativação */
+.drink.show .info,
+.drink.show .img-drink {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* Alternar direção automaticamente */
+.drink:nth-child(even) .info {
+    transform: translateX(40px);
+}
+
+.drink:nth-child(even) .img-drink {
+    transform: translateX(-40px) scale(0.95);
+}
+
+
+/* animação Contato */
+/* Estado inicial (antes de entrar na tela) */
+.contact-card {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+/* Quando a seção entra na tela */
+.contact-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animação levemente atrasada da logo */
+.contact-logo {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.contact-card.animate .contact-logo {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Texto entra depois da logo */
+.contact-info {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.9s ease 0.2s, transform 0.9s ease 0.2s;
+}
+
+.contact-card.animate .contact-info {
+    opacity: 1;
+    transform: translateX(0);
+}

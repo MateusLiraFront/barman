@@ -1,11 +1,196 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="/script.js"></script>
 </head>
+
 <body>
-    
+    <header>
+        <div>
+            <img src="/img/cc-logo.png" alt="copo cheio" class="logo">
+        </div>
+        <div class="link-header">
+            <a href="#drinks">Drinks</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contratação</a>
+        </div>
+
+    </header>
+
+    <div>
+        <img src="/img/banner1.jpeg" alt="" class="banner">
+    </div>
+
+
+    <img src="/img/cc-logo.png" alt="cc-logo" class="logo-center">
+
+    <div class="display-drinks" id="drinks">
+        <div id="drink1" class="drink">
+            <div class="info">
+                <h4>O clássico que nunca sai de cena</h4>
+                <h3>Drink Caipirinha</h3>
+                <p>Refrescante, equilibrada e cheia de personalidade. Feita com limão fresco macerado, açúcar na medida
+                    certa, gelo e uma boa cachaça, ela combina acidez, doçura e intensidade em um drink simples, porém
+                    marcante.</p>
+            </div>
+            <div class="img-drink">
+                <img src="/img/drinks/drink1.png" class="img-drink">
+            </div>
+        </div>
+
+        <div id="drink2" class="drink">
+            <div class="info">
+                <h4>doce, refrescante e irresistível</h4>
+                <h3>Drink Doce Tentação</h3>
+                <p>A escolha perfeita para quem gosta de um drink suave e cheio de sabor. Preparada com morangos
+                    frescos, ela entrega um equilíbrio delicioso entre doçura e frescor, resultando em uma bebida
+                    aromática, vibrante e ideal para qualquer ocasião.</p>
+            </div>
+            <div class="img-drink">
+                <img src="/img/drinks/drink2.png" class="img-drink">
+            </div>
+        </div>
+        <div id="drink3" class="drink">
+            <div class="info">
+                <h4>elegância e frescor em cada gole</h4>
+                <h3>Drink Encanto Roxo</h3>
+                <p>Surpreende pelo sabor suave e sofisticado, destacando uvas frescas. Refrescante e levemente
+                    adocicado. Uma experiência equilibrada e aromática. Um drink elegante, fácil de beber e cheio de
+                    personalidade.</p>
+            </div>
+            <div class="img-drink">
+                <img src="/img/drinks/drink3.png" class="img-drink">
+            </div>
+        </div>
+        <div id="drink4" class="drink">
+            <div class="info">
+                <h4>tropical, refrescante e cheio de sabor</h4>
+                <h3>Drink Paraíso Dourado</h3>
+                <p>Conquista pelo frescor e pelo toque tropical inconfundível. Preparado com abacaxi fresco, ele
+                    equilibra perfeitamente a doçura natural da fruta com uma leve acidez, resultando em uma bebida
+                    refrescante, aromática e perfeita para brindar bons momentos.</p>
+            </div>
+            <div class="img-drink">
+                <img src="/img/drinks/drink4.png" class="img-drink">
+            </div>
+        </div>
+    </div>
+
+    <div class="team" id="sobre">
+        <h3>Equipe</h3>
+        <h4>Leonardo Daivid &nbsp; | &nbsp; Mateus Lira &nbsp; | &nbsp; Vinicius Lucas</h4>
+    </div>
+
+    <div class="carousel">
+        <div class="carousel-track">
+            <div class="card">
+                <img src="/img/about/about1.png" alt="">
+            </div>
+            <div class="card ">
+                <img src="/img/about/about2.png" alt="">
+            </div>
+            <div class="card">
+                <img src="/img/about/about3.png" alt="">
+            </div>
+            <div class="card ">
+                <img src="./img/about/about1.jpg">
+            </div>
+            <div class="card">
+                <img src="/img/about/about2.jpg" alt="">
+            </div>
+            <div class="card">
+                <img src="/img/about/about3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+
+
+    <section class="contact-section" id="contato">
+        <div class="contact-card">
+
+            <!-- Logo -->
+            <div class="contact-logo">
+                <img src="/img/cc-logo.png" alt="Logo Bartender">
+            </div>
+
+            <!-- Conteúdo -->
+            <div class="contact-info">
+                <h2>Contato</h2>
+                <p>
+                    Transforme seu evento em uma experiência única.
+                    Oferecemos serviço profissional de bartender para
+                    casamentos, festas e eventos corporativos, com drinks
+                    personalizados e atendimento de alto nível.
+                </p>
+
+                <a href="https://wa.me/5581992064997" target="_blank" class="contact-whatsapp">
+                    <span>Contrate agora:</span>
+                    <strong>(81) 99206-4997</strong>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <!-- Contratação -->
+            <div class="footer-item">
+                <h4>Contratação</h4>
+                <ul>
+                    <li>Casamentos</li>
+                    <li>Aniversários</li>
+                    <li>Formaturas</li>
+                    <li>Confraternizações</li>
+                </ul>
+            </div>
+
+            <!-- Contato -->
+            <div class="footer-item">
+                <h4>Contato</h4>
+                <div class="contact-links">
+                    <a href="https://wa.me/5581992064997" target="_blank" aria-label="WhatsApp">
+                        <img src="/img/whatsapp-logo.png" alt="WhatsApp" class="logo-svg">
+                        <span>(81) 99206-4997</span>
+                    </a>
+
+                    <a href="https://instagram.com/canecacheia" target="_blank" aria-label="Instagram">
+                        <img src="/img/instagram-logo.png" alt="Instagram" class="logo-svg">
+                        <span>@canecacheia</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Atendimento -->
+            <div class="footer-item">
+                <h4>Atendimento</h4>
+                <p>
+                    Estamos disponíveis para toda região da
+                    <strong>Grande Recife</strong> e
+                    <strong>Zona da Mata</strong> de <strong>Pernambuco</strong>.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 • Todos os direitos reservados
+        </div>
+    </footer>
+
+
 </body>
+
 </html>
