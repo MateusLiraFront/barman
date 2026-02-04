@@ -90,7 +90,7 @@
         <h3>Equipe</h3>
         <h4>Leonardo Daivid &nbsp; | &nbsp; Mateus Lira &nbsp; | &nbsp; Vinicius Lucas</h4>
     </div>
-
+    <!-- 
     <div class="carousel">
         <div class="carousel-track">
             <div class="card">
@@ -112,28 +112,21 @@
                 <img src="/img/about/about3.jpg" alt="">
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div class="carousel-mobile">
-        <div class="carousel-track">
-            <div class="card">
-                <img src="/img/about/about1.png" alt="">
+    <div class="mobile-carousel">
+        <div class="mobile-track">
+            <div class="mobile-card left">
+                <img id="img-left" src="/img/about/about1.png">
             </div>
-            <div class="card ">
-                <img src="/img/about/about2.png" alt="">
+
+            <div class="mobile-card center">
+                <img id="img-center" src="/img/about/about2.png">
             </div>
-            <div class="card">
-                <img src="/img/about/about3.png" alt="">
+
+            <div class="mobile-card right">
+                <img id="img-right" src="/img/about/about3.png">
             </div>
-            <!-- <div class="card ">
-                <img src="./img/about/about1.jpg">
-            </div>
-            <div class="card">
-                <img src="/img/about/about2.jpg" alt="">
-            </div>
-            <div class="card">
-                <img src="/img/about/about3.jpg" alt="">
-            </div> -->
         </div>
     </div>
 
@@ -212,6 +205,47 @@
             © 2026 • Todos os direitos reservados
         </div>
     </footer>
+
+
+    <script>
+        const images = [
+            "/img/about/about1.png",
+            "/img/about/about2.png",
+            "/img/about/about3.png",
+            "/img/about/about1.jpg",
+            "/img/about/about2.jpg",
+            "/img/about/about3.jpg"
+           
+        ];
+
+        const cards = document.querySelectorAll(".mobile-card");
+        const imgs = document.querySelectorAll(".mobile-card img");
+
+        // índice da próxima imagem a entrar
+        let index = 3;
+
+        setInterval(() => {
+            let left, center, right;
+
+            cards.forEach(card => {
+                if (card.classList.contains("left")) left = card;
+                if (card.classList.contains("center")) center = card;
+                if (card.classList.contains("right")) right = card;
+            });
+
+            // gira as classes
+            left.className = "mobile-card center";
+            center.className = "mobile-card right";
+            right.className = "mobile-card left";
+
+            // atualiza SOMENTE a imagem que acabou de entrar pela direita
+            const img = right.querySelector("img");
+            img.src = images[index % images.length];
+
+            index++;
+        }, 2000);
+    </script>
+
 
 
 </body>

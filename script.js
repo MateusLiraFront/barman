@@ -42,47 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll(".card");
-    const total = cards.length;
-    let current = 2;
-
-    function render() {
-        cards.forEach(card => card.className = "card");
-
-        cards[current].classList.add("active");
-
-        cards[(current + 1) % total].classList.add("right");
-        cards[(current + 2) % total].classList.add("far");
-
-        cards[(current - 1 + total) % total].classList.add("left");
-        cards[(current - 2 + total) % total].classList.add("far");
-    }
-
-    function next() {
-        current = (current + 1) % total;
-        render();
-    }
-
-    // Clique manual
-    cards.forEach((card, index) => {
-        card.addEventListener("click", () => {
-            current = index;
-            render();
-            resetAuto();
-        });
-    });
-
-    let auto = setInterval(next, 2000);
-
-    function resetAuto() {
-        clearInterval(auto);
-        auto = setInterval(next, 2000);
-    }
-
-    render();
-});
-
 
 document.addEventListener("DOMContentLoaded", () => {
     const contactCard = document.querySelector(".contact-card");

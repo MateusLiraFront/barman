@@ -229,66 +229,36 @@ h3 {
     flex-direction: row-reverse;
 }
 
-.carousel {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background: #0c0c0c;
-    padding: 60px 0;
+.mobile-track {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.carousel-track {
-    display: flex;
-    align-items: center;
-    gap: 36px;
+.mobile-card {
+  transition: transform 0.5s ease, filter 0.5s ease, opacity 0.5s ease;
 }
 
-/* Base */
-.card {
-    width: 180px;
-    height: 280px;
-    border-radius: 18px;
-    overflow: hidden;
-    cursor: pointer;
-
-    opacity: 0.25;
-    transform: scale(0.75);
-    transition: 
-        transform 0.5s ease,
-        opacity 0.5s ease,
-        box-shadow 0.5s ease;
+.mobile-card img {
+  width: 140px;
+  border-radius: 12px;
 }
 
-/* Centro */
-.card.active {
-    width: 260px;
-    height: 380px;
-    opacity: 1;
-    transform: scale(1);
-    box-shadow: 0 20px 50px rgba(0,0,0,.8);
+/* centro */
+.mobile-card.center img {
+  width: 220px;
+  transform: scale(1.05);
+  filter: none;
+  opacity: 1;
 }
 
-/* Próximos */
-.card.left,
-.card.right {
-    opacity: 0.6;
-    transform: scale(0.85);
-    box-shadow: 0 12px 30px rgba(0,0,0,.6);
+/* laterais */
+.mobile-card.left img,
+.mobile-card.right img {
+  filter: blur(4px) brightness(0.7);
+  opacity: 0.6;
 }
 
-/* Mais distantes */
-.card.far {
-    opacity: 0.4;
-    transform: scale(0.78);
-}
-
-/* Imagem */
-.card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
 
 .team{
     margin-top: 40px;
@@ -390,10 +360,11 @@ h4{
 }
 
 
-@media (min-width: 900px){
-    .carousel-mobile{
+@media (min-width: 768px){
+    /* .mobile-carousel,
+    .mobile-track{
         display: none;
-    }
+    } */
 }
 
 /* =========================
@@ -422,9 +393,7 @@ h4{
     }
 
     /* ===== CAROUSEL ===== */
-    .carousel {
-        display: none;
-    }
+  
 
     /* ===== CONTATO ===== */
     .contact-card {
@@ -524,9 +493,20 @@ h4{
         border-radius: 12px;
         object-fit: cover;
     }
+
+    .mobile-card img {
+  width: 80px;
+  border-radius: 12px;
 }
 
-
+/* centro */
+.mobile-card.center img {
+  width: 180px;
+  transform: scale(1.05);
+  filter: none;
+  opacity: 1;
+}
+}
 
 /*                      Animações                        */
 
@@ -577,33 +557,6 @@ h4{
     opacity: 1;
     transform: translateY(0);
 }
-
-/* .drink .info {
-    opacity: 0;
-    transform: translateX(-40px);
-    transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
-}
-
-.drink .img-drink {
-    opacity: 0;
-    transform: translateX(40px) scale(0.95);
-    transition: opacity 0.8s ease 0.4s, transform 0.8s ease 0.4s;
-}
-
-.drink.show .info,
-.drink.show .img-drink {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-}
-
-
-.drink:nth-child(even) .info {
-    transform: translateX(40px);
-}
-
-.drink:nth-child(even) .img-drink {
-    transform: translateX(-40px) scale(0.95);
-} */
 
 
 /* animação Contato */
