@@ -358,7 +358,16 @@ h4{
 .team{
     text-align: center;
 }
-
+ .logo-whats-svg{
+        width: 20px;
+        max-width: 30px;
+    }
+    .contato-redirect{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
 
 @media (min-width: 768px){
     /* .mobile-carousel,
@@ -392,6 +401,7 @@ h4{
         margin-top: 50px;
     }
 
+   
     /* ===== CAROUSEL ===== */
   
 
